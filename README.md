@@ -1,1 +1,2 @@
-This is just an indroductory site to see how git works
+This is just an introductory site to see how git works ...
+

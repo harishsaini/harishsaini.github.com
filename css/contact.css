@@ -1,3 +1,8 @@
+@font-face{
+	font-family:chalet;
+	src: url('../fonts/ChaletParis.ttf');
+}
+
 .cnt{
 	margin-top:150px;
 	

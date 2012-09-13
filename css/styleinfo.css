@@ -1,0 +1,123 @@
+/*file starts here */
+/*@font-face{
+	font-family:chalet;
+	src: url('../fonts/ChaletParis.ttf');
+}*/
+body{
+}
+.ltPanel{
+	float:left;
+}
+.ltPanel .block{
+	background:#000;
+	height:166px;
+	width:173px;
+	height:0;
+	width:0;
+	margin-left:750px;
+	margin-top:500px;
+}
+.ltPanel img{
+	margin-left:750px;
+	position:fixed;
+	top:0;
+	left:0;
+	width:190px;
+	margin-top:22px;
+	height:0;
+	/*height:900px;	*/
+}
+.navi, .rtPanel{
+	font-family:"chalet";
+}
+.rtPanel{
+	display:block;
+	background:#000;
+	color:#fff;
+	position:absolute;
+	top:0;
+	left:421px;
+	left:1070px;
+	width:0;
+	height:100%;
+	padding-bottom:7px;
+
+}
+.rtPanel .info p{
+	margin-left:auto;
+	margin-right:auto;
+	line-height:20px;
+	width:435px;
+	margin-top:20px;
+	display:none;
+}
+.rtPanel p:first-child{
+	margin-top:50px;
+}
+.navi{
+	font-family:"chalet";
+	font-weight:normal;
+}
+.navi ul{
+	text-align:center;
+}
+.navi ul li{
+	display:inline;
+	text-transform:uppercase;
+	position:relative;
+}
+.navi ul li a{
+	text-decoration:none;
+	color:#e2e2e2;
+	position:absolute;
+	top:0;
+	display:none;
+/*	top:55px;
+*/}
+.navi ul .home{
+	left:-265px;
+}
+.navi ul .info{
+	left:-165px;
+}
+.navi ul .cmpny{
+	left:-77px;
+}
+.navi ul .cntct{
+	left:65px;
+}
+.navi ul .clnts{
+	left:200px;
+}
+
+.footer p{
+	text-align:center;
+	color:#e2e2e2;
+	padding-top:45px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

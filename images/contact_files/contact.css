@@ -1,0 +1,94 @@
+.cnt{
+	margin-top:100px;
+	
+}
+.leftbox{
+	float:left;
+	display:block;
+	background:#000;
+	height:360px;
+	width:0;
+/*	width:27.4%;
+*/
+}
+.leftbox div{
+	display:none;
+/*	display:inline-block;
+*/
+}
+.leftbox .c{
+	width:180px;
+}
+.leftbox .t{
+	width:110px;
+}
+.leftbox .a{
+	width:110px;
+}
+.leftbox .c{
+	width:180px;
+}
+.leftbox .c1{
+	width:150px;
+}
+
+.leftbox .t1{
+	width:0px;
+}
+
+
+
+/*.leftbox p{
+	color:#fff;
+	font-family:"chalet";
+	font-weight:800;
+	font-size:305px;
+	margin-top:-85px;
+}
+.leftbox p+p{
+	font-size:210px;
+	margin-top:-30px;
+}*/
+.rightCnt{
+	float:left;
+	margin-left:50px;
+}
+.rightCnt .blackbox{
+	background:#000;
+	width:365px;
+	height:30px;
+	margin-top:20px;
+}
+.rightCnt .blackbox:first-child{
+	margin-top:0;
+}
+/*.blackbox:nth-of-type(4){
+}
+.blackbox:nth-of-type(3){
+	margin-top:20px;
+}*/
+.mail{
+	font-family:"chalet";
+	font-weight:bold;
+	color:#000;
+	margin-top:20px;
+}
+.mail a{
+	text-decoration:none;
+	color:#000;
+	float:right;
+}
+.address{
+	margin-top:35px;
+	font-family:"chalet";
+}
+.address span{
+	background:#000;
+	color:#fff;
+}
+.address p{
+	line-height:20px;
+}
+.address p:last-child{
+	display:inline-table;
+}

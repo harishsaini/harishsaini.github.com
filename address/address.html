@@ -136,12 +136,15 @@
 <body id="" onload="" class="bg">
 	<div class="left">
 	<div>
-		<label for="">First Name : </label><input type="text" name="" value="" id="fname">
-		<label for="">Last Name : </label><input type="text" name="" value="" id="lname">
-		<label for="">Phone :</label><input type="text" name="" value="" id="phone">
-		<label for="">City : </label><input type="text" name="" value="" id="city">
+		<label for="">First Name : </label><input type="text" name="" value="" id="fname"><br>
+		<label for="">Last Name : </label><input type="text" name="" value="" id="lname"><br>
+		<label for="">Phone :</label><input type="text" name="" value="" id="phone"><br>
+		<label for="">City : </label><input type="text" name="" value="" id="city"><br>
 		<p><input type="button" value="Save" onClick="save()"></p>
 	</div>
+	
+	</div>
+	
 	<div class="svdEntrs">
 		<table border="1" class="svdEntrs" id="contactList">
 		<tr>
@@ -152,19 +155,21 @@
 		</tr>
 		</table>
 	</div>
-	</div>
+	
+	
+	
 	<div class="right">
 	<div class="sort">
-		Sort By : <br>
+		Sort By : <br><br>
 		<input type="radio" name="group1" value="firstname" checked="true" onclick="sorting('firstname');">First Name 
 		<input type="radio" name="group1" value="lastname" onclick="sorting('lastname');">Last Name 
 		<input type="radio" name="group1" value="city" onclick="sorting('city');">City<br><br>
 		
 	</div>
 	<div class="search">
-		Search for :<input type="text" name="" value="" id="searchText">
-		<input type="button" value="Search" onClick="search()">
-		<input type="button" value="delete" onClick="deleteRes()">
+		Search for :<input type="text" name="" value="" id="searchText"><br>
+		<input type="button" class="btn" value="Search" onClick="search()">
+		<input type="button" class="btn" value="delete" onClick="deleteRes()">
 		<table border="1" class="srchRslts" id="resultList">
 		<!-- <tr>
 							<td>First Name</td>

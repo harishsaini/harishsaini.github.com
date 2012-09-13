@@ -1,0 +1,22 @@
+.bg{
+	background:grey;
+}
+.left{
+	float:left;
+	margin-left:250px;
+}
+.right{
+	float:right;
+	margin-right:250px;
+}
+.svdEntrs ul li{
+	display:inline;
+	margin-left:50px;
+	font-size:28px;
+}
+#errMsg{
+	color:#ffffff;
+}
+.srchRslts{
+	margin-top:20px;
+}

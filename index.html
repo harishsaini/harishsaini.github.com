@@ -6,8 +6,10 @@
 	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript" charset="utf-8">
 	$(document).ready(function(){
-		$(".footer").slideDown();
-		$("ul li").animate({marginLeft:"65px"},400).animate({marginLeft:"45px"}).animate({marginLeft:"55px"});
+		$("ul li").animate({marginLeft:"65px"},400).animate({marginLeft:"45px"}).animate({marginLeft:"55px"},400,function(){
+			$(".footer").animate({top:"97%"});
+			
+		});
 		
 		
 		

@@ -1,31 +1,21 @@
 /*file starts here */
-@font-face{
+/*@font-face{
 	font-family:chalet;
 	src: url('../fonts/ChaletParis.ttf');
-}
+}*/
 body{
 }
 .ltPanel{
 	float:left;
 }
-.ltPanel .block{
-	background:#000;
-	height:166px;
-	width:173px;
-	height:0;
-	width:0;
-	margin-left:750px;
-	margin-top:500px;
-}
 .ltPanel img{
-	margin-left:750px;
-	position:fixed;
-	top:0;
-	left:0;
-	width:190px;
-	margin-top:22px;
-	height:0;
-	/*height:900px;	*/
+	margin-left:75px;
+	/*padding-bottom:17px;
+	background:#000;*/
+	/*position:fixed;
+		top:0;
+		left:0;*/
+	height:100%;
 }
 .navi, .rtPanel{
 	font-family:"chalet";
@@ -34,13 +24,15 @@ body{
 	display:block;
 	background:#000;
 	color:#fff;
+	/*padding-left:90px;*/
+	/*padding-right:90px;*/
 	position:absolute;
 	top:0;
 	left:421px;
-	left:1070px;
-	width:0;
-	height:905px;
-	padding-bottom:17px;
+	/*width:470px;*/
+	width:615px;
+	height:100%;
+	padding-bottom:7px;
 
 }
 .rtPanel .info p{
@@ -57,14 +49,19 @@ body{
 .navi{
 	font-family:"chalet";
 	font-weight:normal;
+/*	margin-bottom:55px;
+*/	/*margin-top:60px;*/
+	
 }
 .navi ul{
+	/*margin-left:-30px;*/
 	text-align:center;
 }
 .navi ul li{
 	display:inline;
 	text-transform:uppercase;
 	position:relative;
+	/*margin-left:55px;*/
 }
 .navi ul li a{
 	text-decoration:none;

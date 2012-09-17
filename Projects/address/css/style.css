@@ -68,9 +68,10 @@ body, .left p input{
 	height:25px;
 	width:140px;
 }
-#errMsg{
-	color:#ffffff;
-}
+/*#errMsg{
+	color:red;
+	opacity:0.4;
+}*/
 .srchRslts{
 	margin-top:70px;
 }

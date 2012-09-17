@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>L'NOIR</title>
+	<link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" charset="utf-8">
+	<link rel="stylesheet" href="../css/styleinfo.css" type="text/css" media="screen" charset="utf-8">
+	<script src="../js/scripts.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" charset="utf-8">
+	$(document).ready(function(){
+		var time =0;
+		setTimeout(function(){animLeftImage()},time+=900);
+		setTimeout(function(){animRtPanel()},time+=1200);
+		setTimeout(function(){naviFirst();},time+=2500);
+		setTimeout(function(){naviLater()},time+=600);
+		var i=1;
+		setTimeout(function(){animInfo()},time+=300);
+
+
+		$(".navi ul li a").click(function(e){
+			link = this.href;
+			var timer = 0;
+			e.preventDefault();
+			if (link.indexOf("info.html") != -1){
+				return;
+			}
+			unloadNavi();
+			$(".info p").animate({marginLeft:"660px"},900,function(){
+				$(".footer").fadeOut();
+				unloadPanel();
+
+			});
+		});
+
+		//functions
+		function unloadPanel(){
+			$(".rtPanel").animate({left:"745px",width:"0"},800);
+			$(".ltPanel img").delay(800).animate({marginLeft:"140px",width:"0"},400,function(){window.location = link;});
+
+		}
+		function animLeftImage(){
+			$(".ltPanel .block").animate({height:"166px",width:"173px"},200).animate({marginTop:"0"},800).animate({marginTop:"400px"},700).fadeOut(100);
+			$(".ltPanel img").delay(1100).animate({height:"990px"},600).delay(400).animate({marginLeft:"75px"},800);
+			// $(".ltPanel img").delay(1100).slideDown(1800);
+			
+		}
+		function animRtPanel(){
+			$(".rtPanel").delay(1700).animate({width:"650px",left:"421px"},900);
+		}
+		function animInfo(){
+			$(".info p").each(function(){
+				$(this).delay(i*200).fadeIn(1500);
+				i++;
+			});
+			$(".footer").delay(i*200).fadeIn(800);
+		}
+	});
+	</script>
+
+</head>
+<body onload="">
+
+	<div class="ltPanel">
+		<div class="block"></div>
+		<img src="../images/info_back.png" > <!-- style="display:none;"> -->
+		
+	</div>
+	<div class="rtPanel">
+		<!-- navi starts here -->
+		<div class="navi">
+			<ul>
+				<li><a class="home" href="../index.html">Home</a></li>
+				<li><a class="info" href="#" style="cursor: default;">info</a></li>
+				<li><a class="cmpny" href="company.html">company</a></li>
+				<li><a class="cntct" href="contact.html">contact</a></li>
+				<li><a class="clnts" href="clients.html">clients</a></li>
+			</ul>
+		</div>
+		<!-- navi ends here -->
+		<div class="info">
+			<p style="margin-top:80px">Fashions almost by definition change with time, but good design is often timeless. L&#8217;noir jewelry, accessories, and apparel are designed with the intention of creating product that is as attractive and fashion forward for today as it will be for years to come. </p>
+			<p>The L’noir team is united by an undying passion for creative ingenuity and consumer quality. We are a collective team of designers, trendsetters, and fashionistas who passionately navigate the multitudes of design surrounding the world of fashion.</p>
+			<p>The opportunity to create is what keeps us working. The fulfillment of creating alluring products is what keeps us inspired.</p>
+			<p>The unique paths traveled by each member of the our team is what sets us apart from other firms.  We thrive on the inspiration of this diverse, ever-changing city. Surrounded by the most renowned food, fashion, music, and art, turning raw ideas into tangible products is what makes us tick. Each member of our creative division hails from a unique background, bringing a multitude of skills and experience to the table.</p>
+			<p>Our wide-ranging styling expertise allows us to come together as a team and visualize a product from start to finish. We believe in the power of teamwork and the advantage of personal style when developing the best possible product for our top clients.</p>
+
+			<p>L&#8217;noir designs are as sophisticated and playful as those who wear them- with an affordability that is just as attractive. Each collection is autonomously designed for not one individual in mind, but all who embrace true beauty and good design</p>
+		</div>
+		<!-- footer starts here -->
+		<div class="footer" style="display:none">
+			<p>
+				Copyright &#169; 2010.All Rights Reserved
+			</p>
+		</div>
+		<!-- footer ends here -->
+	</div>
+</body>

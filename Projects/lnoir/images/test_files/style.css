@@ -1,0 +1,17 @@
+body{
+	
+}
+.left{
+	float:left;
+	width:370px;
+}
+.left label{
+	display:inline-block;
+	margin-top:20px;
+}
+.left input{
+	margin-left:20px;
+}
+.right{
+	float:right;
+}

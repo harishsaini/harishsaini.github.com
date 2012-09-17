@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>Calculator</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	<script src="Scripts/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		// var k =1; without bodmas needs this
+		var x = 0;
+		var y= 0;
+		var elemSliced=0;
+		window.addEventListener('keyup', keyAdder, true);
+		function clean(){
+			window.location.reload();
+			document.getElementById('expression').value="";
+		}
+		// jquery
+		
+		$(document).ready(function(){
+		$("#AC").click(function (){
+			clean();
+		});
+		$("#Del").click(function (){
+			remove();
+		});
+		$("#expression").bind('keypress',function(event){
+			var c = event.which;
+			console.log('c='+c);
+			if(c > 47 && c < 58) 
+			return true;
+			else if(c == 43 || c == 45 || c == 47 || c == 42 || c == 46 || c == 13 || c==8 || c==40 || c==41)
+			return true;
+			else {
+				console.log('Not allowed');
+				return false;
+			}
+
+		});
+		
+		//memory functions
+		var memory = 0;
+		
+		$("#M").click(function (){
+			$('#expression').attr('value', memory);
+		});
+		$("#AddM").click(function (){
+			var n= Number($('#expression').val());
+			memory +=n;
+		});
+		$("#SubM").click(function (){
+			var n= Number($('#expression').val());
+			memory -=n;
+		});
+		// to add operand or operator to the array
+		
+		$(".btn").click(function (){
+			var str=document.getElementById('expression').value;
+			var c = this.value;
+			str += c;
+			log(str);
+			document.getElementById('expression').value = str;
+		});
+		// to calculate
+		
+		$("#equal").click(function(){
+			var expr = $("#expression").val();
+			var a = new Array ();
+			var i=0;
+			var count = 0;
+			var flag = true;
+			log(expr);
+			while(expr[i]!=null){
+				var b = expr[i];
+				if ( b=="-" && a[count]==null) {
+					a[count]="-";
+					flag=false;
+				}
+				else if (b=='(' && a[count]==null)
+				{
+					a[count]="(";
+					count++;
+					flag=true;
+				}
+				else if(b=="+" || b=="-" || b=="*" || b=="/" || b=="(" || b==")" )
+				{
+					if (a[count-1] != ")")count++;
+					a[count]=expr[i];
+					count++;
+					flag=true;
+				}
+				else{
+					if(flag==true) a[count]="";
+					a[count]=a[count]+b;
+					flag=false;
+				}
+				log('a='+a);
+				i++;
+			}
+			count=0;
+			log('a='+a);
+			calculate(a);
+			log('a='+a);
+			$('#expression').attr('value',a);
+		});
+		});//document.ready ends here
+		
+		
+		//functions
+		
+		function calculate(a){
+			log('inside calculate');
+			if (a.length <= 2) {
+				return;
+			}
+			calcBrackets(a);
+			if (a.length <= 2) {
+				return;
+			}
+			var result=0;
+			var k = a.indexOf('/');
+			while(k != -1){
+				a[k-1]=Number(a[k-1]) / Number(a[k+1]);
+				result=a[k-1];
+				a.splice(k,2);
+				k= a.indexOf('/');
+			}
+			k = a.indexOf('*');
+			while(k != -1){
+				a[k-1]=Number(a[k-1]) * Number(a[k+1]);
+				result=a[k-1];
+				a.splice(k,2);
+				k= a.indexOf('*');
+			}
+			var len = a.length;
+			log('len='+len);
+			var opr ="";
+			while (len != 1)
+			{
+				log('hi');
+				log('a='+a);
+				opr = a[1];
+				switch(opr){
+					case '+':
+					a[0] = Number(a[0]) + Number(a[2]);
+					result=a[0];
+					a.splice(1,2);
+					len = a.length;
+					break;
+					case '-':
+					a[0] = a[0]-a[2];
+					result=a[0];
+					a.splice(1,2);
+					len = a.length;
+					break;
+				}
+			}
+			log('a='+a); 
+		}
+		function calcBrackets(a)
+		{
+			log('a='+a);
+			y = a.indexOf(")");
+			var x,y,z;
+			var z=0; 
+			var elemSliced =0;
+			while(y != -1){  
+				var l ;
+				for(l=y;a[l]!='(';l--);
+				x=l;
+
+				if((y-x)<=2){ 
+					a[x]=a[x+1];
+					a.splice(x+1,2);
+					return;
+				}
+				var k = 0;
+				var m=0;
+				var result=0;
+				var b = new Array();
+				for(l=x+1;l<y;l++,m++) b[m]=a[l];
+				log('b='+b);
+				k = b.indexOf('/');
+				while(k != -1){
+					b[k-1]=Number(b[k-1]) / Number(b[k+1]);
+					b.splice(k,2);
+					elemSliced +=2;
+					result=b[k-1];
+					a[x]=result;
+					k= b.indexOf('/');
+				}
+				k = b.indexOf('*');
+				while(k != -1){
+					b[k-1]= Number(b[k-1]) * Number(b[k+1]);
+					b.splice(k,2);
+					elemSliced +=2;
+					result=b[k-1];
+					a[x]=result;
+					k= b.indexOf('*');
+				}
+				k = b.indexOf('-');
+				while(k != -1){
+					b[k-1]=Number(b[k-1]) - Number(b[k+1]);
+					b.splice(k,2);
+					elemSliced +=2;	
+					result=b[k-1];
+					a[x]=result;
+					k= b.indexOf('-');
+				}
+				k = b.indexOf('+');
+				while(k != -1){
+					b[k-1]=Number(b[k-1]) + Number(b[k+1]);
+					b.splice(k,2);
+					elemSliced +=2;
+					result=b[k-1];
+					a[x]=result;
+					k= b.indexOf('+');
+				}
+				log('y-x='+y-x);
+				a.splice(x+1,y-x);// decide second argument a.length-1 or y-2 elemSliced+3
+				cnt=x;
+				log("a="+a);
+				y = a.indexOf(")");
+			}
+
+
+		}
+		
+		function keyAdder(e)
+		{
+			var c = e.keyCode;
+			if(!e.shiftKey){
+				switch(c)
+			{
+				case 13:
+				$('#equal').trigger("click");
+				break;
+				case 67:
+				clean();
+				break;
+			 }	
+			}
+		}
+		//utility functions
+		function log(str){
+			console.log(str);
+		}
+	</script>
+</head>
+<body  class="wrapper" id="" onload="">
+	<div class="calc">
+		<input id="expression" type="text" value="" tabindex="0" placeholder="0" autofocus="autofocus">
+		<div class="buttons">
+		<input type="button" value="1" class="btn" > 
+		<input type="button" value="2" class="btn" >
+		<input type="button" value="3" class="btn" > 
+		<input type="button" value="&#42;" class="btn" name="multiply" >
+		<input type="button" value="4" class="btn" id=""> 
+		<input type="button" value="5" class="btn" id="">
+		<input type="button" value="6" class="btn" id=""> 
+		<input type="button" value="&#47;" class="btn" name="divide">
+		<input type="button" value="7" class="btn" id=""> 
+		<input type="button" value="8" class="btn" id="">
+		<input type="button" value="9" class="btn" id=""> 
+		<input type="button" value="&#45;" class="btn" name="minus">
+		<input type="button" value="&#43;" class="btn" name="plus" id=""> 
+		<input type="button" value="AC" id="AC"> 
+		<input type="button" value="0" class="btn" id=""> 
+		<input type="button" value="&#61;" id="equal">
+		<input type="button" value="&#40;" class="btn" name="open" id=""> 
+		<input type="button" value="&#41;" class="btn" name="close" id="">
+		<input type="button" value="." class="btn" name="point" id="">
+		<input type="button" value="M" id="M" >
+		<input type="button" value="M+" id="AddM">
+		<input type="button" value="M-" id="SubM">
+		<input type="button" value="Del" id="Del">
+		<p>Press backspace to del and c to clear</p>
+		
+		
+		
+		</div>
+
+	</div>
+</body>

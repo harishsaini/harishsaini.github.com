@@ -1,0 +1,42 @@
+.content, .details{
+	overflow:hidden;
+}
+.content .blackbg{
+	background:url('../images/company_bg.png');
+	width:0;
+	height:45px;
+	margin-top:130px;
+	position:relative;
+	
+}
+.content #blackbg2{
+	height:45px;
+	width:0;
+	margin-left:500px;
+	background:#000;
+}
+.content h2{
+	color:#fff;
+	width:55%;
+	font-family:"chalet";
+	font-size:65px;
+	font-weight:bolder;
+	position:absolute;
+	left:5px;
+	top:-5px;
+}
+
+.details{
+	font-family:"chalet";
+	margin-left:500px;
+	width:555px;
+	font-weight:bold;
+}
+.details p{
+	display:none;
+	margin-top:25px;
+	line-height:20px;
+}
+.details p:last-child{
+	padding-bottom:25px;
+}

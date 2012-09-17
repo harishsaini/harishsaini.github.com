@@ -10,6 +10,8 @@
 		var indx =0;
 		function save()
 		{
+			if (validations()==false) return;
+			document.getElementById("errMsg").innerHTML = "";
 			person=new Object();
 			person.firstname=document.getElementById('fname').value;
 			person.lastname=document.getElementById('lname').value;
@@ -37,7 +39,7 @@
 		function search(){
 			var elem = document.getElementById('searchText').value;
 			if(elem == ""){
-				document.getElementById('errMsg').innerHTML = "Please Enter what to search for";
+				document.getElementById('errMsg1').innerHTML = "Please Enter what to search for";
 				return;
 			}
 			log('searching for '+elem);
@@ -127,6 +129,12 @@
 				contacts.splice(found,1);
 			}
 		}
+		function validations(){
+			if(document.getElementById("fname").value=="" || document.getElementById("lname").value=="" || document.getElementById("phone").value=="" || document.getElementById("city").value==""){
+				document.getElementById("errMsg").innerHTML = "fill all the details !!";
+				return false;
+			}
+		} 
 		//utility functions
 		function log(str){
 			console.log(str);
@@ -142,6 +150,7 @@
 		<label for="">City : </label><input type="text" name="" value="" id="city"><br>
 		<p><input type="button" value="Save" onClick="save()"></p>
 	</div>
+	<p id="errMsg"></p>
 	
 	</div>
 	
@@ -179,7 +188,8 @@
 							</tr> -->
 		</table>
 	</div>
-	<p id="errMsg"></p>
+	<p id="errMsg1"></p>
+	
 	</div>
 	
 </body>

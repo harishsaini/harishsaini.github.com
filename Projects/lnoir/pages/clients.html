@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>L'NOIR</title>
+	<!-- <link rel="stylesheet" href="../css/styleCompany.css" type="text/css" media="screen" charset="utf-8"> -->
+	<link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	<link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" charset="utf-8">
+	<link rel="stylesheet" href="../css/clients.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/scripts.js" type="text/javascript" charset="utf-8"></script>
+
+	<script type="text/javascript" charset="utf-8">
+	$(document).ready(function(){
+		var i=1;
+		var time = 0;
+		naviFirst();
+		setTimeout(function(){naviLater()},time+=600);
+		setTimeout(function(){animClientbg()},time+=300);
+		
+		setTimeout(function(){animClients()},time+=2000);
+		// setTimeout(function(){animateFooter()},time+=200);
+		setTimeout(function(){$(".clients").fadeIn(600);},time+=200);
+		
+		
+		//functions
+		$(".navi ul li a").click(function(e){
+			var link = this.href;
+			var timer = 0;
+			e.preventDefault();
+			if (link.indexOf("clients.html") != -1){
+				return;
+			}
+			
+			unloadNavi();
+			setTimeout(function(){$(".clients ul li").animate({marginLeft:"50px"},300).fadeOut(200,function(){unloadFooter();});},timer+800);
+			// setTimeout(function(){unloadFooter();},timer+800);
+			setTimeout(function(){window.location = link;},timer+2000);
+		});
+		function animClientbg(){
+			$(".clntbg span").each(function(){
+				$(this).delay(i*100).animate({top:"25px"},800);
+				i++;
+			});
+			
+		}
+		function animClients(){
+			$(".clients ul li").animate({marginLeft:"120px"},800).animate({marginLeft:"100px"},200,function(){animateFooter()});
+			}
+		});
+		</script>
+
+	</head>
+	<body onload="">
+		<!-- navi starts here -->
+		<div class="navi">
+			<ul>
+				<li><a class="home" href="../index.html">Home</a></li>
+				<li><a class="info" href="info.html">info</a></li>
+				<li><a class="cmpny" href="company.html">company</a></li>
+				<li><a class="cntct" href="contact.html">contact</a></li>
+				<li><a class="clnts" href="#" style="cursor: default;">clients</a></li>
+			</ul>
+		</div>
+		<!-- navi ends here -->
+
+		<!-- content starts here -->
+		<!-- <div Class="textbg">
+		L'noir
+		</div> -->
+		<div class="clntbg">
+			<span id="L">L</span>
+			<span id="sngl">'</span>
+			<span id="N">n</span>
+			<span id="O">O</span>
+			<span id="I">i</span>
+			<span id="R">R</span>
+		</div>
+		<div class="clients" style="display:none;">
+			<ul>
+				<li><img src="../images/clients/client1.png" ></li>
+				<li><img src="../images/clients/client2.png" ></li>
+				<li><img src="../images/clients/client3.png" ></li>
+				<li><img src="../images/clients/client4.png" ></li>
+				<li><img src="../images/clients/client5.png" ></li>
+				<li><img src="../images/clients/client6.png" ></li>
+				<br >
+				<li><img src="../images/clients/client7.png" ></li>
+				<li><img src="../images/clients/client8.png" ></li>
+				<li><img src="../images/clients/client9.png" ></li>
+				<li><img src="../images/clients/client10.png" ></li>
+				<li><img src="../images/clients/client11.png" ></li>
+				<br >
+				<li><img src="../images/clients/client12.png" ></li>
+				<li><img src="../images/clients/client13.png" ></li>
+				<li><img src="../images/clients/client14.png" ></li>
+				<li><img src="../images/clients/client15.png" ></li>
+				<li><img src="../images/clients/client16.png" ></li>
+				<br >
+				<li><img src="../images/clients/client17.png" ></li>
+				<li><img src="../images/clients/client18.png" ></li>
+				<li><img src="../images/clients/client19.png" ></li>
+				<li><img src="../images/clients/client20.png" ></li>
+				<li><img src="../images/clients/client21.png" ></li>
+				<li><img src="../images/clients/client22.png" ></li>
+			</ul>
+
+		</div>
+		<!-- content ends here -->
+
+		<!-- footer starts here -->
+		<div class="footer" style="display:none;">
+			Copyright &#169; 2010.All Rights Reserved
+		</div>	
+		<!-- footer ends here -->
+
+	</body>

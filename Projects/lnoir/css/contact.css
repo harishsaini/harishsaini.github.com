@@ -1,0 +1,91 @@
+.cnt{
+	margin-top:150px;
+	
+}
+.leftbox{
+	float:left;
+	display:block;
+	background:#000;
+	height:360px;
+	width:0;
+/*	width:27.4%;
+*/
+}
+.leftbox div{
+	display:none;
+	margin-top:360px;
+/*	display:inline-block;
+*/
+}
+
+.leftbox .o{
+	margin-left:190px;
+}
+.leftbox .n,.leftbox .t1{
+	margin-left:381px;
+}
+.leftbox .a{
+	margin-left:130px;
+}
+.leftbox .c1{
+	/*width:150px;*/
+	margin-left:250px;
+}
+
+.rightCnt{
+	float:left;
+	margin-left:50px;
+}
+.rightCnt .blackbox{
+	background:#000;
+	/*width:365px;*/
+	width:0;
+	height:30px;
+	/*margin-top:20px;*/
+	margin-top:40px;
+}
+/*.rightCnt .blackbox:first-child{
+	margin-top:0;
+}*/
+
+.mail{
+	display:none;
+	font-family:"chalet";
+	font-weight:bold;
+	color:#000;
+	margin-top:20px;
+}
+.mail a{
+	text-decoration:none;
+	color:#000;
+	float:right;
+}
+.address{
+	margin-top:35px;
+	font-family:"chalet";
+}
+/*.address p{
+	overflow:hidden;
+}*/
+.address #nyo,.address #addrT{
+	display:inline-block;
+	width:0px;
+	height:15px;
+	background:#000;
+	color:#fff;
+}
+.address #canal,#ny10,#phone{
+	/*display:inline-block;*/
+	overflow:hidden;
+	display:inline-block;
+	width:0px;
+	height:15px;
+	background:none;
+}
+.address #canal{
+	margin-top:10px;
+}
+.address p:last-child{
+	display:none;
+	/*display:inline-table;*/
+}

@@ -1,8 +1,4 @@
 /*file starts here */
-@font-face{
-	font-family:chalet;
-	src: url('../fonts/ChaletParis.ttf');
-}
 body{
 	text-align:center;
 }
@@ -30,15 +26,15 @@ body{
 	text-decoration:none;
 	color:#000;
 }
-.home{
-	cursor:default;
-}
 .footer{
 	position:absolute;
 	bottom:0;
 	left:800px;
 }
-
+@font-face{
+	font-family:chalet;
+	src: url('../fonts/ChaletParis.ttf');
+}
 
 
 

@@ -49,3 +49,7 @@
 	left:40%;
 	width:300px;
 }
+@font-face{
+	font-family:chalet;
+	src: url('../fonts/ChaletParis.ttf');
+}

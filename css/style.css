@@ -1,10 +1,5 @@
 /*this css contains common styles 
 */
-
-@font-face{
-	font-family:chalet;
-	src: url('../fonts/ChaletParis.ttf');
-}
 .navi ul{
 	text-align:center;
 	font-family:"chalet";

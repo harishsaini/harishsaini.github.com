@@ -1,8 +1,8 @@
 /*file starts here */
-@font-face{
+/*@font-face{
 	font-family:chalet;
 	src: url('../fonts/ChaletParis.ttf');
-}
+}*/
 body{
 }
 .ltPanel{
@@ -24,8 +24,7 @@ body{
 	left:0;
 	width:190px;
 	margin-top:22px;
-	height:0;
-	/*height:900px;	*/
+	height:0;	
 }
 .navi, .rtPanel{
 	font-family:"chalet";
@@ -39,8 +38,8 @@ body{
 	left:421px;
 	left:1070px;
 	width:0;
-	height:100%;
-	padding-bottom:7px;
+	height:auto;
+	padding-bottom:17px;
 
 }
 .rtPanel .info p{
@@ -79,6 +78,7 @@ body{
 }
 .navi ul .info{
 	left:-165px;
+	cursor:default;
 }
 .navi ul .cmpny{
 	left:-77px;
@@ -90,10 +90,11 @@ body{
 	left:200px;
 }
 
-.footer p{
+.footer {
 	text-align:center;
 	color:#e2e2e2;
-	padding-top:45px;
+	/*padding-top:45px;*/
+	margin-top:90px;
 }
 
 

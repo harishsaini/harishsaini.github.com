@@ -1,9 +1,3 @@
-@font-face{
-	font-family:chalet;
-	src: url('../fonts/ChaletParis.ttf');
-}
-
-
 .clients{
 	text-align:center;
 	margin-top:150px;
@@ -43,4 +37,7 @@
 }
 .clntbg #R{
 	right:270px;
+}
+.clnts{
+	cursor:default;
 }

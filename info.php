@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <head>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-	<title>L'NOIR</title>
-	<link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" charset="utf-8">
-	<link rel="stylesheet" href="../css/styleinfo.css" type="text/css" media="screen" charset="utf-8">
-	<script src="../js/scripts.js" type="text/javascript" charset="utf-8"></script>
-	<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" href="css/reset.css" type="text/css" media="screen" charset="utf-8">
+	<link rel="stylesheet" href="css/styleinfo.css" type="text/css" media="screen" charset="utf-8">
+	<script src="js/scripts.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript" charset="utf-8">
 	$(document).ready(function(){
 		var time =0;
@@ -21,7 +20,7 @@
 			link = this.href;
 			var timer = 0;
 			e.preventDefault();
-			if (link.indexOf("info.html") != -1){
+			if (link.indexOf("info.php") != -1){
 				return;
 			}
 			unloadNavi();
@@ -40,9 +39,8 @@
 		}
 		function animLeftImage(){
 			$(".ltPanel .block").animate({height:"166px",width:"173px"},200).animate({marginTop:"0"},800).animate({marginTop:"400px"},700).fadeOut(100);
-						$(".ltPanel img").delay(1100).animate({height:"990px"},600).delay(400).animate({marginLeft:"75px"},800);
-			// $(".ltPanel img").delay(1100).slideDown(1800);
-			
+			// .animate({marginTop:"900px"},900)
+			$(".ltPanel img").delay(1100).animate({height:"900px"},600).delay(400).animate({marginLeft:"75px"},800);
 		}
 		function animRtPanel(){
 			$(".rtPanel").delay(1700).animate({width:"650px",left:"421px"},900);
@@ -62,21 +60,14 @@
 
 	<div class="ltPanel">
 		<div class="block"></div>
-		<img src="../images/info_back.png" > <!-- style="display:none;"> -->
+		<img src="images/info_back.png">
 		
 	</div>
 	<div class="rtPanel">
-		<!-- navi starts here -->
-		<div class="navi">
-			<ul>
-				<li><a class="home" href="../index.html">Home</a></li>
-				<li><a class="info" href="#" style="cursor: default;">info</a></li>
-				<li><a class="cmpny" href="company.html">company</a></li>
-				<li><a class="cntct" href="contact.html">contact</a></li>
-				<li><a class="clnts" href="clients.html">clients</a></li>
-			</ul>
-		</div>
-		<!-- navi ends here -->
+		<?php
+		$pageName = "Info";
+		include 'header.php';
+		?>
 		<div class="info">
 			<p style="margin-top:80px">Fashions almost by definition change with time, but good design is often timeless. L&#8217;noir jewelry, accessories, and apparel are designed with the intention of creating product that is as attractive and fashion forward for today as it will be for years to come. </p>
 			<p>The L’noir team is united by an undying passion for creative ingenuity and consumer quality. We are a collective team of designers, trendsetters, and fashionistas who passionately navigate the multitudes of design surrounding the world of fashion.</p>
@@ -87,11 +78,9 @@
 			<p>L&#8217;noir designs are as sophisticated and playful as those who wear them- with an affordability that is just as attractive. Each collection is autonomously designed for not one individual in mind, but all who embrace true beauty and good design</p>
 		</div>
 		<!-- footer starts here -->
-		<div class="footer" style="display:none">
-			<p>
-				Copyright &#169; 2010.All Rights Reserved
-			</p>
-		</div>
+			<?php
+			include 'footer.php';
+			?>
 		<!-- footer ends here -->
 	</div>
 </body>

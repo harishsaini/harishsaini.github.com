@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <head>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-	<title>L'NOIR</title>
-	<link rel="stylesheet" href="../css/styleCompany.css" type="text/css" media="screen" charset="utf-8">
-	<link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
-	<link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" charset="utf-8">
-	<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
-	<script src="../js/scripts.js" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" href="css/styleCompany.css" type="text/css" media="screen" charset="utf-8">
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	<link rel="stylesheet" href="css/reset.css" type="text/css" media="screen" charset="utf-8">
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/scripts.js" type="text/javascript" charset="utf-8"></script>
 	
 	<script type="text/javascript" charset="utf-8">
 	$(document).ready(function(){
 		naviFirst();
 		setTimeout(function(){naviLater()},600);
 		$("#blackbg1").animate({width:"1050px"},1500,function(){animDetails()});
-		setTimeout(function(){$("#blackbg2").animate({width:"1350px",marginRight:"0"},1500,function(){animateFooter()});},3500)
+		setTimeout(function(){$("#blackbg2").animate({width:"100%",marginRight:"0"},1500,function(){animateFooter()});},3500)
 		
 		$(".navi ul li a").click(function(e){
 			link = this.href;
 			var timer = 0;
 			e.preventDefault();
-			if (link.indexOf("company.html") != -1){
+			if (link.indexOf("company.php") != -1){
 				return;
 			}
 			unloadNavi();
@@ -36,8 +35,8 @@
 			$(".details").animate({height:"0"},800,function(){unloadblackbg()} );
 		}
 		function unloadblackbg(){
-			$("#blackbg1").animate({marginLeft:"650px",width:"550px"},800).animate({marginLeft:"650px",width:"250px"},800).animate({height:"0",width:"0"},800);
-			$("#blackbg2").animate({marginRight:"652px",width:"550px"},800).animate({marginRight:"952px",width:"250px"},800).animate({marginRight:"1202px",height:"0",width:"0"},800,function(){window.location = link;});
+			$("#blackbg1").animate({marginLeft:"650px",width:"550px"},800).animate({width:"250px"},800).animate({height:"0",width:"0"},800);
+			$("#blackbg2").animate({marginLeft:"650px",width:"550px"},800).animate({width:"250px"},800).animate({height:"0",width:"0"},800,function(){window.location = link;});
 		}
 		function animDetails(){
 			$("#frstLine").fadeIn(800,function(){$("#scndLine").fadeIn(800,function(){$("#thirdLine").fadeIn(800);});}).delay(1800);
@@ -46,18 +45,10 @@
 	</script>
 </head>
 <body onload="">
-	<!-- navi starts here -->
-	<div class="navi">
-		<ul>
-			<li><a class="home" href="../index.html">Home</a></li>
-			<li><a class="info" href="info.html">info</a></li>
-			<li><a class="cmpny" href="#" style="cursor: default;">company</a></li>
-			<li><a class="cntct" href="contact.html">contact</a></li>
-			<li><a class="clnts" href="clients.html">clients</a></li>
-		</ul>
-	</div>
-	<!-- navi ends here -->
-
+	<?php 
+	$pageName = "Company";
+	include('header.php');
+	 ?>
 	<!-- content starts here -->
 	<div class="content">
 		<div id="blackbg1" class="blackbg">
@@ -68,15 +59,10 @@
 			<p id="scndLine">Liberated from a world of established visions- L&#8217;noir is both raw and innovative-designed for those who are looking for anything but mainstream. </p>
 			<p id="thirdLine">Experimenting with mixed materials and a non-kosher methodology- all private label collections bare truth to the sophistication and elegance accompanied by all who dare to embrace.</p>
 		</div>
-		<div id="blackbg2" class="blackbg" style="float:right;"></div>
+		<div id="blackbg2"></div>
 	</div>
 
 	<!-- content ends here -->
-
-	<!-- footer starts here -->
-	<div class="footer">
-		Copyright &#169; 2010.All Rights Reserved
-	</div>	
-	<!-- footer ends here -->
-
+		<?php include 'footer.php';
+		?>
 </body>

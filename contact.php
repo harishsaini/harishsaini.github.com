@@ -1,26 +1,23 @@
 <!DOCTYPE html>
 <head>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-	<title>L'NOIR</title>
-	<!-- <link rel="stylesheet" href="../css/styleCompany.css" type="text/css" media="screen" charset="utf-8"> -->
-	<link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" charset="utf-8">
-	<link rel="stylesheet" href="../css/contact.css" type="text/css" media="screen" title="no title" charset="utf-8">
-	<link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
-	<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
-	<script src="../js/scripts.js" type="text/javascript" charset="utf-8"></script>
+	<!-- <link rel="stylesheet" href="css/styleCompany.css" type="text/css" media="screen" charset="utf-8"> -->
+	<link rel="stylesheet" href="css/reset.css" type="text/css" media="screen" charset="utf-8">
+	<link rel="stylesheet" href="css/contact.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/scripts.js" type="text/javascript" charset="utf-8"></script>
 
 	<script type="text/javascript" charset="utf-8">
 	$(document).ready(function(){
 		naviFirst();
 		setTimeout(function(){naviLater()},600);
-		$(".leftbox").animate({width:"29.4%"},1100);
-		$(".leftbox").animate({width:"27.4%"},"slow",function(){animRight()}).delay(1300);
+		$(".leftbox").animate({width:"33em"},1100);
+		$(".leftbox").animate({width:"31em"},"slow",function(){animRight()}).delay(1300);
 		// setTimeout(function(){animRight()},1500);
 		setTimeout(function(){animateFirstLine()},1800);
 		setTimeout(function(){animateSecondLine()},2000);
-		
-		// animateFooter();
-		
+				
 		// functions
 		
 		function animRight(){
@@ -46,15 +43,10 @@
 </head>
 <body onload="">
 	<!-- navi starts here -->
-	<div class="navi">
-		<ul>
-			<li><a class="home" href="../index.html">Home</a></li>
-			<li><a class="info" href="info.html">info</a></li>
-			<li><a class="cmpny" href="company.html">company</a></li>
-			<li><a class="cntct" href="#" style="cursor: default;">contact</a></li>
-			<li><a class="clnts" href="clients.html">clients</a></li>
-		</ul>
-	</div>
+	<?php
+	$pageName = "Contact Us";
+	include 'header.php';
+	?>
 	<!-- navi ends here -->
 
 	<!-- content starts here -->
@@ -63,25 +55,25 @@
 			<!-- <p>con</p>
 			<p>TACT</p> -->
 			<div class="c">
-				<img src="../images/c.png" alt="C">
+				<img src="images/c.png" alt="C">
 			</div>
 			<div class="o">
-				<img src="../images/o.png" alt="O">
+				<img src="images/o.png" alt="O">
 			</div>
 			<div class="n">
-				<img src="../images/n.png" alt="N">
+				<img src="images/n.png" alt="N">
 			</div>
 			<div class="t">
-				<img src="../images/t.png" alt="T">
+				<img src="images/t.png" alt="T">
 			</div>
 			<div class="a">
-				<img src="../images/a.png" alt="A">
+				<img src="images/a.png" alt="A">
 			</div>
 			<div class="c1">
-				<img src="../images/c1.png" alt="C">
+				<img src="images/c1.png" alt="C">
 			</div>
 			<div class="t1">
-				<img src="../images/t.png" alt="T">
+				<img src="images/t.png" alt="T">
 			</div>
 		</div>
 		<div class="rightCnt">
@@ -109,11 +101,6 @@
 		</div>
 	</div>
 	<!-- content ends here -->
-
-	<!-- footer starts here -->
-	<div class="footer">
-		Copyright &#169; 2010.All Rights Reserved
-	</div>	
-	<!-- footer ends here -->
-
+		<?php include 'footer.php';
+		 ?>
 </body>

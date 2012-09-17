@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <head >
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-	<title>L'NOIR</title>
 	<link rel="stylesheet" href="css/stylesheet.css" type="text/css">
 	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript" charset="utf-8">
 	$(document).ready(function(){
 		$(".footer").slideDown();
 		$("ul li").animate({marginLeft:"65px"},400).animate({marginLeft:"45px"}).animate({marginLeft:"55px"});
-		
 		$(".navi ul li a").click(function(e){
 			var link = this.href;
 			// alert(link);
 			e.preventDefault();
-			if (link.indexOf("lnoir.html") != -1){
+			if (link.indexOf("index.php") != -1){
 				return;
 			}
 			$(".navi ul").animate({top:"60%"},400);
@@ -26,21 +24,11 @@
 	</script>
 </head>
 <body onload="">
-	<!-- navi starts here -->
-	<div class="navi">
-		<ul>
-			<li>Home</li>
-			<li><a href="pages/info.html">info</a></li>
-			<li><a href="pages/company.html">company</a></li>
-			<li><a href="pages/contact.html">contact</a></li>
-			<li><a href="pages/clients.html">clients</a></li>
-		</ul>
-	</div>
-	<!-- navi ends here -->
-	<!-- footer starts here -->
-	<div class="footer" style="display:none;">
-		Copyright &#169; 2010.All Rights Reserved
-	</div>	
-	<!-- footer ends here -->
-
+	
+	<?php
+	$pageName = "Home";
+	include 'header.php';
+	include 'footer.php';
+	?>
+	
 </body>

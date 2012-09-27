@@ -15,22 +15,26 @@
 	margin-left:500px;
 	background:#000;
 }
+.content h2, .details{
+	font-family:"chalet";
+	font-weight:bold;
+}
 .content h2{
 	color:#fff;
 	width:55%;
-	font-family:"chalet";
 	font-size:65px;
-	font-weight:bolder;
 	position:absolute;
 	left:5px;
 	top:-5px;
 }
+/*.blackbg span{
+	color:transparent;
+	font-size:15px;
+}*/
 
 .details{
-	font-family:"chalet";
 	margin-left:500px;
 	width:555px;
-	font-weight:bold;
 }
 .details p{
 	display:none;

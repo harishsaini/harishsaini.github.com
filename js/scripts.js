@@ -32,7 +32,7 @@ function animateFirstLine(){
 	$(".leftbox .o").fadeIn();
 	$(".leftbox .o").animate({marginTop:"-200px"},1100);
 	$(".leftbox .n").fadeIn();
-	$(".leftbox .n").animate({marginTop:"-200px"},1100);
+	$(".leftbox .n").animate({marginTop:"-200px"},800,function(){animateSecondLine();});
 }
 function animateSecondLine(){
 	$(".leftbox .t").fadeIn();

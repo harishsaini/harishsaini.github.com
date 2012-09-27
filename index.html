@@ -6,13 +6,13 @@
 	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript" charset="utf-8">
 	$(document).ready(function(){
-		$("ul li").animate({marginLeft:"65px"},400).animate({marginLeft:"45px"}).animate({marginLeft:"55px"},400,function(){
-			$(".footer").fadeIn().animate({top:"97%"});
-			
+		$("#home").animate({left:"660px"}).animate({left:"680px"});
+		$("#info").animate({left:"760px"}).animate({left:"780px"});
+		$("#company").animate({left:"850px"}).animate({left:"870px"});
+		$("#contact").animate({left:"1030px"}).animate({left:"1010px"});
+		$("#clients").animate({left:"1180px"}).animate({left:"1160px"},600,function(){
+			$(".footer p").animate({bottom:"1px"});
 		});
-		
-		
-		
 		
 		//on unloading the page
 		$(".navi ul li a").click(function(e){
@@ -21,14 +21,15 @@
 			if (link.indexOf("lnoir.html") != -1){
 				return;
 			}
-			$(".navi ul").animate({top:"60%"},400,function(){
-				$(".navi ul").fadeOut(400);
-				$(".footer").animate({bottom:"-15px"},200,function(){
-					$(".footer").fadeOut(800);
-					setTimeout(function(){window.location = link;},2000);
-			});
-			});
+			$("#home").animate({top:"58.5%"},600).fadeOut();
+			$("#info").animate({top:"58.1%"},600).fadeOut();
+			$("#company").animate({top:"57.7%"},600).fadeOut();
+			$("#contact").animate({top:"57.3%"},600).fadeOut();
+			$("#clients").animate({top:"56.9%"},600).fadeOut();
+			$(".footer p").animate({bottom:"-30px"});
+			setTimeout(function(){window.location = link;},1400);
 		});
+		
 	});
 	</script>
 </head>
@@ -36,17 +37,19 @@
 	<!-- navi starts here -->
 	<div class="navi">
 		<ul>
-			<li>Home</li>
-			<li><a href="pages/info.html">info</a></li>
-			<li><a href="pages/company.html">company</a></li>
-			<li><a href="pages/contact.html">contact</a></li>
-			<li><a href="pages/clients.html">clients</a></li>
+			<li id="home">Home</li>
+			<li id="info"><a href="pages/info.html">info</a></li>
+			<li id="company"><a href="pages/company.html">company</a></li>
+			<li id="contact"><a href="pages/contact.html">contact</a></li>
+			<li id="clients"><a href="pages/clients.html">clients</a></li>
 		</ul>
 	</div>
 	<!-- navi ends here -->
 	<!-- footer starts here -->
-	<div class="footer" style="display:none;">
+	<div class="footer">
+		<p>
 		Copyright &#169; 2010.All Rights Reserved
+		</p>
 	</div>	
 	<!-- footer ends here -->
 

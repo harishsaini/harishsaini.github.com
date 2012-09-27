@@ -8,14 +8,10 @@
 	background:#000;
 	height:360px;
 	width:0;
-/*	width:27.4%;
-*/
 }
 .leftbox div{
 	display:none;
 	margin-top:360px;
-/*	display:inline-block;
-*/
 }
 
 .leftbox .o{
@@ -28,7 +24,6 @@
 	margin-left:130px;
 }
 .leftbox .c1{
-	/*width:150px;*/
 	margin-left:250px;
 }
 
@@ -38,15 +33,10 @@
 }
 .rightCnt .blackbox{
 	background:#000;
-	/*width:365px;*/
 	width:0;
 	height:30px;
-	/*margin-top:20px;*/
 	margin-top:40px;
 }
-/*.rightCnt .blackbox:first-child{
-	margin-top:0;
-}*/
 
 .mail{
 	display:none;
@@ -64,9 +54,6 @@
 	margin-top:35px;
 	font-family:"chalet";
 }
-/*.address p{
-	overflow:hidden;
-}*/
 .address #nyo,.address #addrT{
 	display:inline-block;
 	width:0px;
@@ -75,7 +62,6 @@
 	color:#fff;
 }
 .address #canal,#ny10,#phone{
-	/*display:inline-block;*/
 	overflow:hidden;
 	display:inline-block;
 	width:0px;
@@ -87,5 +73,4 @@
 }
 .address p:last-child{
 	display:none;
-	/*display:inline-table;*/
 }

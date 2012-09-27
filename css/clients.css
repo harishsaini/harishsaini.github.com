@@ -1,3 +1,4 @@
+
 .clients{
 	text-align:center;
 	margin-top:150px;
@@ -10,9 +11,10 @@
 .clntbg span{
 	z-index:-1;
 	opacity:0.05;
-	font-family:Comic Sans MS;
+	/*font-family:Comic Sans MS;*/
+	font-family:"chalet";
 	font-size:22em;
-	font-weight:bold;
+	font-weight:bolder;
 	text-shadow: 0 0 2px #000;
 	margin-top:100px;
 	position:fixed;

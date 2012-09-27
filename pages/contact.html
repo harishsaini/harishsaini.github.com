@@ -14,32 +14,43 @@
 		naviFirst();
 		setTimeout(function(){naviLater()},600);
 		$(".leftbox").animate({width:"33em"},1100);
-		$(".leftbox").animate({width:"31em"},"slow",function(){animRight()}).delay(1300);
-		// setTimeout(function(){animRight()},1500);
-		setTimeout(function(){animateFirstLine()},1800);
-		setTimeout(function(){animateSecondLine()},2000);
-		
-		// animateFooter();
+		$(".leftbox").animate({width:"31em"},"slow",function(){
+			animRight();
+			animateFirstLine();
+			});
 		
 		// functions
 		
 		function animRight(){
-			$(".blackbox").animate({width:"365px"},2800);
-			$("#blackbox1").animate({marginTop:"0px"},800);
-			$("#blackbox2").animate({marginTop:"20px"},800);
-			$("#blackbox3").animate({marginTop:"20px"},800);
-			setTimeout(function(){$(".mail").fadeIn(800,function(){animAddress()});},3000);
+			$("#blackbox1").animate({width:"365px"},1000);
+			$("#blackbox2").animate({width:"365px"},1400);
+			$("#blackbox3").animate({width:"365px"},1800,function(){
+				$("#blackbox1").animate({marginTop:"0px"},600);
+				$("#blackbox2").animate({marginTop:"20px"},600);
+				$("#blackbox3").animate({marginTop:"20px"},600);
+				$(".mail").fadeIn(800,function(){animAddress()});
+			});
+			
+			// setTimeout(function(){$(".mail").fadeIn(800,function(){animAddress()});},3000);
 		}
 		function animAddress(){
 			$("#nyo").animate({width:"190px"},1800,function(){$("#canal").fadeIn(1); 
-			$("#canal").animate({width:"210px"},800,function(){animNy10()}  );});
-		}
-		function animNy10(){
-			$("#ny10").fadeIn(1); $("#ny10").animate({width:"210px"},800,function(){animPhone()} );
-		}
-		function animPhone(){
-			$("#addrT").fadeIn(1); $("#addrT").animate({width:"10px"},800,function(){$("#phone").fadeIn(1); $("#phone").animate({width:"210px"},800,function(){ animateFooter();});});
-		}
+			$("#canal").animate({width:"210px"},800,function(){
+				$("#ny10").fadeIn(1); $("#ny10").animate({width:"210px"},800,function(){
+					$("#addrT").fadeIn(1);
+					$("#addrT").animate({width:"10px"},800,function(){
+						$("#phone").fadeIn(1);
+						$("#phone").animate({width:"210px"},800,function(){ 
+							animateFooter();
+						});
+					});
+				});
+			});
+		});
+	}
+		
+		
+		
 	});
 
 	</script>
@@ -98,13 +109,13 @@
 				<span>PRESS</span><span class="detail"><a href="mailto:maria@lnoir.com">MARIA@LNOIR.COM</a></span>
 			</div>
 			<div class="address">
-				<span id="nyo">NEW YORK CITY OFFICE</span><br >
-				<span id="canal">332 CANAL STREET SUITE 6B</span><br >
-				<span id="ny10">NEW YORK CITY, NY 10013</span><br >
+				<span id="nyo">NEW&nbsp;YORK&nbsp;CITY&nbsp;OFFICE</span><br >
+				<span id="canal">332&nbsp;CANAL&nbsp;STREET&nbsp;SUITE&nbsp;6B</span><br >
+				<span id="ny10">NEW&nbsp;YORK&nbsp;CITY,&nbsp;NY&nbsp;10013</span><br >
 				<!-- <p id="canal">332 CANAL STREET SUITE 6B</p>
 								<p id="ny10">NEW YORK CITY, NY 10013</p> -->
 				<span id="addrT">T</span>
-				<span id="phone">(+1) 347 560 0073</span>
+				<span id="phone">(+1)&nbsp;347&nbsp;560&nbsp;0073</span>
 			</div>
 		</div>
 	</div>

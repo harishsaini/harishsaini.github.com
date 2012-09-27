@@ -1,14 +1,13 @@
 /*this css contains common styles 
 */
-.navi ul{
+.navi ul, .footer{
 	text-align:center;
 	font-family:"chalet";
 }
 .navi ul li{
 	display:inline-block;
 	text-transform:uppercase;
-/*	margin-left:55px;
-*/	position:relative;
+	position:relative;
 }
 .navi ul li:first-child{
 	margin-left:0;
@@ -40,9 +39,7 @@
 */
 }
 .footer{
-	font-family:"chalet";
 	font-weight:bold;
-	text-align:center;
 	position:absolute;
 /*	bottom:5px;
 */	top:100%;

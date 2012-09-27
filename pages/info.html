@@ -28,24 +28,27 @@
 			$(".info p").animate({marginLeft:"660px"},900,function(){
 				$(".footer").fadeOut();
 				unloadPanel();
-
 			});
 		});
 
 		//functions
 		function unloadPanel(){
 			$(".rtPanel").animate({left:"745px",width:"0"},800);
-			$(".ltPanel img").delay(800).animate({marginLeft:"140px",width:"0"},400,function(){window.location = link;});
-
-		}
-		function animLeftImage(){
-			$(".ltPanel .block").animate({height:"166px",width:"173px"},200).animate({marginTop:"0"},800).animate({marginTop:"400px"},700).fadeOut(100);
-			$(".ltPanel img").delay(1100).animate({height:"990px"},600).delay(400).animate({marginLeft:"75px"},800);
-			// $(".ltPanel img").delay(1100).slideDown(1800);
+				$(".ltPanel").animate({marginLeft:"140px",width:"0"},800,function(){
+					window.location = link;
+					});
 			
 		}
+		function animLeftImage(){
+			$(".block").animate({height:"166px",width:"173px"},200).animate({marginTop:"22px"},800,function(){
+				$(".block").animate({marginTop:"900px"},600);
+				$(".ltPanel").animate({height:"990px"},600,function(){
+					$(".block").animate({height:"0",width:"0"});
+					}).delay(800).animate({marginLeft:"75px", height:"100%"},800);
+			});
+		}
 		function animRtPanel(){
-			$(".rtPanel").delay(1700).animate({width:"650px",left:"421px"},900);
+			$(".rtPanel").delay(1200).animate({width:"650px",left:"421px"},900);
 		}
 		function animInfo(){
 			$(".info p").each(function(){
@@ -60,11 +63,10 @@
 </head>
 <body onload="">
 
-	<div class="ltPanel">
+	<div class="ltPanel"></div>
+	
 		<div class="block"></div>
-		<img src="../images/info_back.png" > <!-- style="display:none;"> -->
 		
-	</div>
 	<div class="rtPanel">
 		<!-- navi starts here -->
 		<div class="navi">

@@ -13,7 +13,7 @@
 		naviFirst();
 		setTimeout(function(){naviLater()},600);
 		$("#blackbg1").animate({width:"1050px"},1500,function(){animDetails()});
-		
+		// .animate({width:"650px"},1500)
 		//on unloading the page 
 		$(".navi ul li a").click(function(e){
 			link = this.href;
@@ -26,10 +26,9 @@
 			setTimeout(function(){
 				$(".clients ul li").animate({marginLeft:"50px"},300).fadeOut(200,function(){
 					// $("#blackbg1 h2").animate({left:"-460px"},400,function(){unloadDetails()});
-					alert('ok');
 				});
 				},timer+800);
-			setTimeout(function(){$("#blackbg1 h2").animate({left:"-460px"},400,function(){unloadDetails()});},timer+800);
+			setTimeout(function(){$("#blackbg1 h2").animate({left:"-480px"},400,function(){unloadDetails()});},timer+800);
 			setTimeout(function(){unloadFooter()},timer+800);
 		});
 		
@@ -39,15 +38,14 @@
 			$(".details").animate({height:"0"},800,function(){unloadblackbg()} );
 		}
 		function unloadblackbg(){
-			$("#blackbg1").animate({marginLeft:"650px",width:"550px"},800).animate({marginLeft:"650px",width:"250px"},800).animate({height:"0",width:"0"},800);
-			$("#blackbg2").animate({marginLeft:"650px",width:"550px"},800).animate({width:"250px"},800).animate({height:"0",width:"0"},800,function(){window.location = link;});
+			$("#blackbg1").animate({marginLeft:"50%",width:"550px"},800).animate({marginLeft:"50%",width:"250px"},800).animate({height:"0",width:"0"},800);
+			$("#blackbg2").animate({marginLeft:"50%",width:"550px"},800).animate({width:"250px"},800).animate({height:"0",width:"0"},800,function(){window.location = link;});
 		}
 		function animDetails(){
 			$("#frstLine").fadeIn(800,function(){
 				$("#scndLine").fadeIn(800,function(){
 					$("#thirdLine").fadeIn(800,function(){
 						$("#blackbg2").animate({width:"100%",marginRight:"0"},1500,function(){animateFooter()});
-						
 					});
 				});
 			}).delay(1800);
@@ -71,7 +69,7 @@
 	<!-- content starts here -->
 	<div class="content">
 		<div id="blackbg1" class="blackbg">
-			<h2>THE COMPANY</h2>
+			<h2>THE&nbsp;COMPANY</h2>
 		</div>
 		<div class="details">
 			<p id="frstLine">L&#8217;noir represents the physical rendering of ideas, thoughts &#038; emotions through a collaborative vision of integrity and most of all beauty. </p>
